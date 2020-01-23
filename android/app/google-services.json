@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "191756311700",
+    "firebase_url": "https://tutorwaydesign.firebaseio.com",
+    "project_id": "tutorwaydesign",
+    "storage_bucket": "tutorwaydesign.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:191756311700:android:0fb99186da3ab1f945e881",
+        "android_client_info": {
+          "package_name": "com.example.hphp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "191756311700-gra7eau5n18kt5kc8mo370dp2dkff0rb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGL1MWRG0NfdLn7eQpMZde7KJL0u0cXdI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "191756311700-gra7eau5n18kt5kc8mo370dp2dkff0rb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "191756311700-flsisbtulamdppdvbmvf2ihhau2sr53a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "coupleapp.TutorWayManageFirebase"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

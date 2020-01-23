@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>191756311700-fdcs99p6bc5hb4ti9jg7ro7gv0losmvb.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.191756311700-fdcs99p6bc5hb4ti9jg7ro7gv0losmvb</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>191756311700-a5q54pp09tupnnt9h8rspj2dbv794lju.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCVrbCg--lAnGjBekCyeFpAmCe9bqxC0UQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>191756311700</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.jaspaswe10.hphp</string>
+	<key>PROJECT_ID</key>
+	<string>tutorwaydesign</string>
+	<key>STORAGE_BUCKET</key>
+	<string>tutorwaydesign.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:191756311700:ios:454e8d6121f3bb5145e881</string>
+	<key>DATABASE_URL</key>
+	<string>https://tutorwaydesign.firebaseio.com</string>
+</dict>
+</plist>
