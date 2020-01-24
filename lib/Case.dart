@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:hphp/DetailTutor.dart';
 
 import 'models/tutor.dart';
 
@@ -50,7 +51,6 @@ class _CasePageState extends State<CasePage> {
           }
 
           setState(() {
-            print('Length: $tutorList.length');
           });
         });
       }
@@ -71,18 +71,37 @@ class _CasePageState extends State<CasePage> {
           IconButton(
             icon: Icon(Icons.add_alert),
             color: Colors.white,
-            onPressed: () => print('gg'),
+            onPressed: () => {},
           )
         ],
 
       ),
-      body: Container(
-        child: tutorList.length == 0 ? new Text("No tutor available") : new ListView.builder(
-          itemCount: tutorList.length,
-          itemBuilder: (_, index){
-            return PostsUI(tutorList[index].nickname, tutorList[index].gender, tutorList[index].university, tutorList[index].major, tutorList[index].tutorsubject, tutorList[index].tutorexperience, tutorList[index].score, tutorList[index].fee, tutorList[index].tutorsubject);
-          },
-        ),
+      body: Column(
+        children: <Widget>[
+                    SizedBox(
+            height: 10.0,
+          ),
+          Container(
+            height: 60.0,
+            width: 330.0,
+            decoration: BoxDecoration(
+              color: Color(0xffffdb4d),
+              borderRadius: BorderRadius.all(Radius.circular(30.0))
+            ),
+
+          ),
+          SizedBox(
+            height: 10.0,
+          ),
+          Expanded(
+            child: tutorList.length == 0 ? new Text("No tutor available") : new ListView.builder(
+              itemCount: tutorList.length,
+              itemBuilder: (_, index){
+                return PostsUI(tutorList[index].nickname, tutorList[index].gender, tutorList[index].university, tutorList[index].major, tutorList[index].tutorsubject, tutorList[index].tutorexperience, tutorList[index].score, tutorList[index].fee, tutorList[index].tutorsubject);
+              },
+            ),
+          ),
+        ],
       ),
     floatingActionButton: FloatingActionButton(
       onPressed: () => sendData,
@@ -95,35 +114,50 @@ class _CasePageState extends State<CasePage> {
 
   Widget PostsUI(String nickname, String gender, String university, String major, String tutorsubject, String experience, String score, String fee, String tutrsubject)
   {
-    return new Card(
-      elevation: 10.0,
-      margin: EdgeInsets.all(15.0),
-      child: new Container(
-        padding: EdgeInsets.all(14.0),
-        child: Row(
-          children: <Widget>[
-            new Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-              Row(
+    return new Container(
+      margin: EdgeInsets.all(8.0), //外
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+        boxShadow: [BoxShadow(
+          color: Color.fromRGBO(220, 220, 220, 1),
+          blurRadius: 10.0,
+          spreadRadius: 0.1,
+          offset: Offset(.0, 0.0)
+        )],
+      ),
+      child: new GestureDetector(
+        onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => DetailTutor()),);
+        },
+              child: new Container(
+          padding: EdgeInsets.all(14.0), //內
+          child: Row(
+            children: <Widget>[
+              new Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text(nickname, style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600),),
-                  SizedBox(width: 10.0,),
-                  Icon(Icons.person)
+                Row(
+                  children: <Widget>[
+                    Text(nickname, style: TextStyle(fontSize: 19.0, fontWeight: FontWeight.w600, color: Color.fromRGBO(226, 211, 1, 1)),),
+                    SizedBox(width: 10.0,),
+                    Icon(Icons.person, color: gender  == "男"? Colors.blue : Colors.red,)
+                  ],
+                ),
+                  SizedBox(height: 6.0,),
+                      Text(university+" 主修"+major, style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w500),),
+                      Text(tutorsubject, style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w500),),
+                      Text(r"HK $"+fee+" / HOUR", style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w700),)
+
                 ],
               ),
-                SizedBox(height: 8.0,),
-                    Text(university+" 主修"+major, style: TextStyle(fontSize: 12.0),),
-                    Text(tutorsubject, style: TextStyle(fontSize: 12.0),)
-
-              ],
-            ),
-            new Column(
-              children: <Widget>[
-                Text(fee+'h')
-              ],
-            )
-          ],
+              new Column(
+                children: <Widget>[
+                  Text(fee+'h')
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
